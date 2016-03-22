@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2007 22:38:26 by Hibernate Tools 3.2.0.beta6a -->
+<hibernate-mapping>
+  <class name="br.pucpr.ppgia.prototipo.vo.Acao" table="tb_acao">
+    <id name="idAcao" type="java.lang.Long">
+      <column name="id_acao"/>
+      <generator class="identity"/>
+    </id>
+    
+    <property name="nomeres" type="string">
+      <column length="11" name="nomeres">
+        <comment>NOMRES - NOME RESUMIDO DA EMPRESA EMISSORA DO PAPEL</comment>
+      </column>
+    </property>
+    
+    <property name="nomefull" type="string">
+      <column length="30" name="nomefull">
+        <comment>Nome completo da acao</comment>
+      </column>
+    </property>
+    
+    <property name="ibovespa" type="java.lang.Boolean">
+      <column name="ibovespa"/>
+    </property>
+    
+    <set name="cotacaos" inverse="true" lazy="true" cascade="all">
+      <key>
+        <column name="id_acao_fk" />
+      </key>
+      <one-to-many class="br.pucpr.ppgia.prototipo.vo.Cotacao"/>
+    </set>    
+    
+  </class>
+</hibernate-mapping>

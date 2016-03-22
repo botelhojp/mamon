@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2007 22:38:26 by Hibernate Tools 3.2.0.beta6a -->
+<hibernate-mapping>
+  <class name="br.pucpr.ppgia.prototipo.vo.Cotacao" table="tb_cotacao">
+  
+    <id name="idCotacao" type="java.lang.Long">
+      <column name="id_cotacao"/>
+      <generator class="identity"/>
+    </id>
+    
+    <many-to-one name="acao" class="br.pucpr.ppgia.prototipo.vo.Acao" not-null="true" >
+      <column name="id_acao_fk"/>
+    </many-to-one>
+    
+    <property name="datapre" type="date">
+      <column length="4" name="datapre"/>
+    </property>
+    
+    <property name="preabe" type="java.lang.Float">
+      <column name="preabe" precision="4" scale="0">
+        <comment>DATA DO PREGÃO</comment>
+      </column>
+    </property>
+    
+    <property name="premax" type="java.lang.Float">
+      <column name="premax" precision="4" scale="0">
+        <comment>PREÃO MÁXIMO DO PAPEL-MERCADO NO PREGÃO</comment>
+      </column>
+    </property>
+    
+    <property name="premin" type="java.lang.Float">
+      <column name="premin" precision="4" scale="0">
+        <comment>PREGÂO MÃNIMO DO PAPELMERCADO NO PREGÃO</comment>
+      </column>
+    </property>
+    <property name="premed" type="java.lang.Float">
+      <column name="premed" precision="4" scale="0">
+        <comment>PREÃO MÃDIO DO PAPELMERCADO NO PREGÃO</comment>
+      </column>
+    </property>
+    <property name="preult" type="java.lang.Float">
+      <column name="preult" precision="4" scale="0">
+        <comment>PREÃO DO ÃLTIMO NEGÃCIO DO PAPEL-MERCADO NO PREGÃO</comment>
+      </column>
+    </property>
+    
+    <property name="preultmv5" type="java.lang.Float">
+      <column name="preultmv5" precision="4" scale="0">
+        <comment>Média Movel 5 do campo preult</comment>
+      </column>
+    </property>
+    
+    <property name="preultmv10" type="java.lang.Float">
+      <column name="preultmv10" precision="4" scale="0">
+        <comment>Média Movel 10 do campo preult</comment>
+      </column>
+    </property>   
+    
+    
+    <property name="preultmv20" type="java.lang.Float">
+      <column name="preultmv20" precision="4" scale="0">
+        <comment>Média Movel 20 do campo preult</comment>
+      </column>
+    </property>
+    
+     <property name="preultESMax" type="java.lang.Float">
+      <column name="preultESMax" precision="4" scale="0">
+        <comment>Maior valor dos último n dias</comment>
+      </column>
+    </property>
+
+     <property name="preultESMin" type="java.lang.Float">
+      <column name="preultESMin" precision="4" scale="0">
+        <comment>Menor valor dos último n dias</comment>
+      </column>
+    </property>    
+    
+    <property name="preofc" type="java.lang.Float">
+      <column name="preofc" precision="4" scale="0">
+        <comment>PREÃO DA MELHOR OFERTA DE COMPRA DO PAPEL-MERCADO</comment>
+      </column>
+    </property>
+    <property name="preofv" type="java.lang.Float">
+      <column name="preofv" precision="4" scale="0">
+        <comment>PREÃO DA MELHOR OFERTA DE VENDA DO PAPEL-MERCADO</comment>
+      </column>
+    </property>
+    <property name="totneg" type="java.lang.Long">
+      <column name="totneg">
+        <comment>NÃMERO DE NEGÃCIOS EFETUADOS COM O PAPELMERCADO NO PREGÃO</comment>
+      </column>
+    </property>
+    <property name="quatot" type="java.lang.Long">
+      <column name="quatot" precision="4" scale="0">
+        <comment>QUANTIDADE TOTAL DE TÃTULOS NEGOCIADOS NESTE PAPELMERCADO</comment>
+      </column>
+    </property>
+    <property name="votot" type="java.lang.Long">
+      <column name="votot">
+        <comment>VOLUME TOTAL DE TÃTULOS NEGOCIADOS NESTE PAPELMERCADO</comment>
+      </column>
+    </property>
+  </class>
+</hibernate-mapping>
