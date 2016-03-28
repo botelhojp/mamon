@@ -19,18 +19,23 @@ public class Cotacao  implements java.io.Serializable {
     
 
 
-	//MÃ©dia Movel
+	//Media Movel
     private Float preultmv5;
     private Float preultmv10;    
     private Float preultmv20;
-    //EstocÃ¡tico
+    //Estocastico
     private Float preultESMax;
     private Float preultESMin;
     
+    //PREOFC PREÇO DA MELHOR OFERTA DE COMPRA DO PAPEL-MERCADO
     private Float preofc;
+    //PREOFV - PREÇO DA MELHOR OFERTA DE VENDA DO PAPEL-MERCADO
     private Float preofv;
+    //TOTNEG - NEG. - NÚMERO DE NEGÓCIOS EFETUADOS COM O PAPELMERCADO NO PREGÃO
     private Long totneg;
+    //QUATOT - QUANTIDADE TOTAL DE TÍTULOS NEGOCIADOS NESTE PAPELMERCADO
     private Long quatot;
+    //VOLTOT - VOLUME TOTAL DE TÍTULOS NEGOCIADOS NESTE PAPEL-MERCADO
     private Long votot;
 
     

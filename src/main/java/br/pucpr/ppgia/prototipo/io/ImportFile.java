@@ -83,6 +83,12 @@ public class ImportFile {
 			cotacao.setPremin( Util.makeFloat(linha.substring(82, 95)) / 100 );
 			cotacao.setPremed( Util.makeFloat(linha.substring(95, 108)) / 100 );
 			cotacao.setPreult( Util.makeFloat(linha.substring(108, 121)) / 100 );
+			cotacao.setPreofc( Util.makeFloat(linha.substring(121, 134)) / 100 );
+			cotacao.setPreofv( Util.makeFloat(linha.substring(134, 147)) / 100 );
+			cotacao.setTotneg( Util.makeLong(linha.substring(147, 152)));
+			cotacao.setQuatot( Util.makeLong(linha.substring(152, 170)));
+			cotacao.setVotot( Util.makeLong(linha.substring(170, 188)));
+			
 			//médias móveis
 			saveMV(nomeres, cotacao.getPreult(), 20);
 			cotacao.setPreultmv5(calcMV(nomeres, 5));
